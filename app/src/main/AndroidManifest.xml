@@ -30,6 +30,11 @@
                 android:name=".LoginActivity"
                 android:label="@string/title_activity_login">
         </activity>
+        <activity
+                android:name=".DionoList"
+                android:label="@string/title_activity_diono_list"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

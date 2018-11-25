@@ -1,6 +1,7 @@
 package com.example.vlad.art_coral_test
 
 import android.arch.lifecycle.Observer
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
@@ -78,7 +79,10 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.installation.observe(this, Observer {
             when(it) {
-                SUCCESS -> toast("Installation succeed")
+                SUCCESS -> {toast("Installation succeed")
+                val intent = Intent(this, DionoList::class.java)
+                    this.startActivity(intent)
+                }
                 ERROR -> {  stateError = true}
             }
         })

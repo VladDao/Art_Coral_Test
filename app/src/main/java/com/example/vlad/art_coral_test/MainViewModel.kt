@@ -31,16 +31,19 @@ class MainViewModel: ViewModel() {
         private lateinit var rBody: RegistrationBody
 
         fun logPass (username:String,password:String) {
-            if(!TextUtils.isEmpty(username)
+           /* if(!TextUtils.isEmpty(username)
                 && !TextUtils.isEmpty(password)){
+            */
+
             rBody = RegistrationBody(username, password)
-            getBody(rBody)
-            }
+           // getBody(rBody)
+          //  }
+           // else
         }
-        private fun getBody(a:RegistrationBody){
+      /*  private fun getBody(a:RegistrationBody){
             rBody = a
         }
-
+*/
         lateinit var HeadAuth : Authorization
 
         const val X_CSRF_Token:String = "X-CSRF-Token:"
@@ -104,7 +107,7 @@ class MainViewModel: ViewModel() {
                 _resultDinoData.postValue(ERROR)}
         )
 
-    fun destroy() = getData
+ /*   fun destroy() = getData
         .subscribeOn(Schedulers.io())
         .observeOn(Schedulers.io())
         .doOnSubscribe { loadStatus.postValue(LOADING) }
@@ -118,6 +121,7 @@ class MainViewModel: ViewModel() {
                 _installation.postValue(ERROR)
             }
         )
+        */
     fun getToken() = getData
         .subscribeOn(Schedulers.io())
         .observeOn(Schedulers.io())

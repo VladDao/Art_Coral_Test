@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".AddDinoContent">
+
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp" tools:srcCompat="@tools:sample/avatars"
+            android:id="@+id/dinoImageView"
+            app:layout_constraintBottom_toTopOf="@+id/DinoTitleEditText"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="0.0"/>
+
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/DinoTitleEditText" android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/dinoColorSpinner" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="85dp" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="84dp"/>
+    <Spinner
+            android:layout_width="368dp"
+            android:entries="@array/chooseColor"
+            android:layout_height="20dp"
+            android:id="@+id/dinoColorSpinner"
+            android:layout_marginBottom="10dp" app:layout_constraintBottom_toTopOf="@+id/dinoDateEditText"
+            tools:ignore="MissingConstraints" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="10dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="10dp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:ems="10"
+            android:id="@+id/dinoDateEditText" android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/DinoAboutEditText" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="85dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="84dp"/>
+    <EditText
+            android:layout_width="354dp"
+            android:layout_height="102dp"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:id="@+id/DinoAboutEditText" app:layout_constraintBottom_toTopOf="@+id/DinoButtonOk"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="10dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="10dp"/>
+    <Button
+            android:text="Ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/DinoButtonOk"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="5dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="148dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="148dp"/>
+
+</android.support.constraint.ConstraintLayout>

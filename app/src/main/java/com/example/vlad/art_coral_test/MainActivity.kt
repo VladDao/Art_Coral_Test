@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
             MainViewModel.logPass(UserName, UserPassword)
 
 
-            a(logIn)
+            a (logIn)
 
         }
 
@@ -52,10 +52,11 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    var a = if(stateError)
+    var a = fun(view:View) = viewModel.getToken()
+        /*if(stateError)
     {fun(view:View) = viewModel.destroy()}
     else {fun(view:View) = viewModel.getToken()}
-
+*/
 
     private fun observeViewModel(){
 
@@ -74,7 +75,8 @@ class MainActivity : AppCompatActivity() {
         })
         viewModel.resultToken.observe(this, Observer {
             textViewTest.text = it ?: EMPTY_STRING
-            fun getTokenStart(view: View) = viewModel.destroy()
+            AddDinoContent.mUserName(it!!)
+          //  fun getTokenStart(view: View) = viewModel.destroy()
         })
 
         viewModel.installation.observe(this, Observer {
@@ -83,14 +85,21 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, DionoList::class.java)
                     this.startActivity(intent)
                 }
-                ERROR -> {  stateError = true}
+                ERROR -> {
+                    //recreate()
+                    val intent = Intent(this, MainActivity::class.java)
+                    shouldUpRecreateTask(intent)
+                    stateError = true}
             }
         })
 
     }
-
-
-
+/*
+    override fun onDestroy() {
+        super.onDestroy()
+        ApiService::class.java
+    }
+*/
     companion object AuthA{
         private const val EMPTY_STRING = ""
 

@@ -10,18 +10,13 @@ object ApiServiceFactory {
 
 
     fun createService():ApiService = Retrofit.Builder()
-        .baseUrl("http://dinotest.art-coral.com")
+        .baseUrl("")
         .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .build()
         .create(ApiService::class.java)
 
-    fun destroy() = Retrofit.Builder()
-        .baseUrl("http://dinotest.art-coral.com")
-        .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
-        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-        .build()
-        .create(ApiService::class.java)
+
 
 
 }

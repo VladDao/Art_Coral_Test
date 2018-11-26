@@ -25,9 +25,11 @@ interface ApiService {
     fun getDinos(@Header (X_CSRF_Token)token:String,
                  @Header(Cookie)Cook:String
                  ):Single <DinoRsponce>
-//@Header (X_CSRF_Token)token:String,
-//                 @Header(Cookie)Cook:String
 
 
+    @POST("/rest/node")
+    fun createDino(@Header (X_CSRF_Token)token:String,
+                   @Header(Cookie)Cook:String
+                    ):Single <DinoRsponce>
 
 }
